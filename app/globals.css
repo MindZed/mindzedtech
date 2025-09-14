@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Custom fonts */
+  --font-clash-display: var(--font-clash-display), sans-serif;
+  --font-clash-displaybold: var(--font-clash-displaybold), sans-serif;
+  --font-satoshi: var(--font-satoshi), sans-serif;
+
+  /* Custom Colors */
+  --color-primaryRed: #b33030;
+  --color-secondaryRed: #d31515;
+  --color-zBlack: #090110;
+  --color-zWhite: #e7e7e7;
+
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
+  }
+
+  /* Define your custom animation utility class using a CSS variable */
+  --animate-shine: shine 5s linear infinite;
+
+  --animate-gradient: gradient 8s linear infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: satoshi, sans-serif;
+}
